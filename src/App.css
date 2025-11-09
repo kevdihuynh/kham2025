@@ -43,14 +43,14 @@ main {
   justify-content: center;
   pointer-events: none;
   isolation: isolate;
-  background-color: #f1f5f9;
+  background-color: white;
   /* background:    url("../assets/background.png") center / cover; */
 }
 
 .background::before {
   content: "";
   position: absolute;
-  background-color: #f1f5f9;
+  background-color: white;
   /* background:
     url("../assets/background.png") center / cover; */
   z-index: -1;

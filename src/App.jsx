@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import backgroundImage from "../assets/TEST.png";
-import openingVideo from "../assets/video.mp4";
+import openingVideo from "../assets/video2.mp4";
 import "./App.css";
 
 const createTimeSegments = (targetDate) => {
@@ -72,14 +72,13 @@ const Countdown = ({ weddingDate, onPlayVideo }) => {
   );
 };
 
-const Background = ({ playing, onEnded }) => (
+const Background = ({ playing }) => (
   <div className="background" aria-hidden="true">
     {playing ? (
       <video
         autoPlay
         muted
         playsInline
-        onEnded={onEnded}
         poster={backgroundImage}
       >
         <source src={openingVideo} type="video/mp4" />
@@ -97,14 +96,10 @@ const App = () => {
     setIsVideoPlaying(true);
   };
 
-  const handleVideoEnded = () => {
-    setIsVideoPlaying(false);
-  };
-
   return (
     <>
       <div className="background-container">
-        <Background playing={isVideoPlaying} onEnded={handleVideoEnded} />
+        <Background playing={isVideoPlaying} />
       </div>
       <main>
         <Countdown weddingDate="2025-06-14T15:00:00" onPlayVideo={handlePlayVideo} />

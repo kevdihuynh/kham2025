@@ -134,11 +134,13 @@ main {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid rgba(31, 41, 55, 0.65);
-  padding-right: 0.35rem;
   animation:
-    typing 3.4s steps(16, end) forwards,
-    caret 0.75s steps(1, end) 3.4s 2;
+    typing 1.7s steps(16, end) forwards,
+    caret 0.375s steps(1, end) 1.7s 2;
+}
+
+.typing-text--hidden {
+  visibility: hidden;
 }
 
 @keyframes typing {

@@ -24,6 +24,7 @@ const createTimeSegments = (targetDate) => {
 const Countdown = ({ weddingDate, onPlayVideo }) => {
   const targetDate = useMemo(() => new Date(weddingDate), [weddingDate]);
   const [segments, setSegments] = useState(() => createTimeSegments(targetDate));
+  const [isCallToActionVisible, setIsCallToActionVisible] = useState(true);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -37,8 +38,17 @@ const Countdown = ({ weddingDate, onPlayVideo }) => {
     return (
       <div className="card card--full">
         {onPlayVideo ? (
-          <button className="celebrate-button" type="button" onClick={onPlayVideo}>
-            <span className="typing-text">Click to open...</span>
+          <button
+            className="celebrate-button"
+            type="button"
+            onClick={() => {
+              setIsCallToActionVisible(false);
+              onPlayVideo();
+            }}
+          >
+            <span className={`typing-text${isCallToActionVisible ? "" : " typing-text--hidden"}`}>
+              Click to open...
+            </span>
           </button>
         ) : null}
       </div>

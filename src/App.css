@@ -43,21 +43,14 @@ main {
   justify-content: center;
   pointer-events: none;
   isolation: isolate;
-  background: radial-gradient(circle at 20% 15%, rgba(178, 223, 219, 0.65), transparent 55%),
-    radial-gradient(circle at 85% 80%, rgba(125, 211, 252, 0.55), rgba(191, 219, 254, 0.85) 65%);
+  background:    url("../assets/background.png") center / cover;
 }
 
 .background::before {
   content: "";
   position: absolute;
-  inset: -25%;
   background:
-    radial-gradient(circle at 15% 25%, rgba(236, 254, 255, 0.95), transparent 60%),
-    radial-gradient(circle at 75% 60%, rgba(134, 239, 172, 0.55), rgba(167, 243, 208, 0.8) 60%),
-    linear-gradient(180deg, rgba(240, 253, 250, 0.95) 0%, rgba(224, 242, 254, 0.9) 55%, rgba(191, 219, 254, 0.85) 100%);
-  filter: blur(160px);
-  opacity: 1;
-  transform: scale(1.15);
+    url("../assets/background.png") center / cover;
   z-index: -1;
 }
 
@@ -67,6 +60,8 @@ main {
   height: 100%;
   object-fit: contain;
   object-position: center;
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 90%);
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 90%);
 }
 
 .background video {
@@ -142,8 +137,8 @@ main {
   border-right: 2px solid rgba(31, 41, 55, 0.65);
   padding-right: 0.35rem;
   animation:
-    typing 1.7s steps(16, end) forwards,
-    caret 0.375s steps(1, end) 1.7s 2;
+    typing 3.4s steps(16, end) forwards,
+    caret 0.75s steps(1, end) 3.4s 2;
 }
 
 @keyframes typing {
@@ -207,4 +202,5 @@ main {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import backgroundImage from "../assets/landing.png";
-import openingVideo from "../assets/video3.mp4";
+import openingVideo from "../assets/vid.mp4";
 import "./App.css";
 
 const createTimeSegments = (targetDate) => {
